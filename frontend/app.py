@@ -81,7 +81,6 @@ if not st.session_state.logged_in:
     
     with center_col:
         st.markdown('<div class="auth-container">', unsafe_allow_html=True)
-        
         if st.session_state.auth_mode == "login":
             with st.form("auth_form"):
                 st.markdown('<div class="avatar-box"><div class="avatar-circle"><svg viewBox="0 0 24 24"><path d="M12,12A5,5 0 0,1 7,7A5,5 0 0,1 12,2A5,5 0 0,1 17,7A5,5 0 0,1 12,12M12,14C17.33,14 28,16.67 28,22V24H-4V22C-4,16.67 6.67,14 12,14Z" /></svg></div></div>', unsafe_allow_html=True)
@@ -123,7 +122,7 @@ else:
             <div class="brand-title">Smart Document<br><span style="font-size:13px; color:rgba(255,255,255,0.6);">Assistant Workspace</span></div>
         </div>
         """, unsafe_allow_html=True)
-        
+
         st.markdown("<p style='font-size:11px; color:rgba(255,255,255,0.5); font-weight:700; margin-left:5px;'>MAIN MENU</p>", unsafe_allow_html=True)
         
         if st.button("🏠 Dashboard", key="btn_dash", use_container_width=True, type="primary" if st.session_state.active_tab == "Dashboard" else "secondary"):
@@ -267,7 +266,7 @@ else:
                 st.markdown("<p style='color:rgba(255,255,255,0.4); text-align:center; padding: 20px 0;'>Upload a PDF to activate workspace.</p>", unsafe_allow_html=True)
             st.markdown('</div>', unsafe_allow_html=True)
 
-    # --- PAGES ROUTING (తాజా డేటాతో రన్ అవ్వడానికి అప్‌డేట్ చేసాను) ---
+    # --- PAGES ROUTING ---
     elif st.session_state.active_tab == "Docs":
         if os.path.exists("pages/my_documents.py"):
             exec(open("pages/my_documents.py", encoding="utf-8").read())
@@ -281,10 +280,11 @@ else:
             st.error("pages/ai_chat.py ఫైల్ దొరకలేదు!")
 
     elif st.session_state.active_tab == "Summarize":
-        if os.path.exists("pages/summarize.py"):
-            exec(open("pages/summarize.py", encoding="utf-8").read())
+        # 🌟 పాత 'pages/summarize.py' ని కొత్త ఫైల్ 'pages/summary.py' కి ఇక్కడ అప్‌డేట్ చేసాం
+        if os.path.exists("pages/summary.py"):
+            exec(open("pages/summary.py", encoding="utf-8").read())
         else:
-            st.error("pages/summarize.py ఫైల్ దొరకలేదు!")
+            st.error("pages/summary.py ఫైల్ దొరకలేదు!")
 
     elif st.session_state.active_tab == "Extract":
         if os.path.exists("pages/extract_text.py"):

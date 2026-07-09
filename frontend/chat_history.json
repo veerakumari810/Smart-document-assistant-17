@@ -1,0 +1,12 @@
+{
+    "messages": [
+        {
+            "role": "user",
+            "content": "what techstacks are used"
+        },
+        {
+            "role": "assistant",
+            "content": "Python, FastAPI, Streamlit/React, Qwen, Sentence Transformers, ChromaDB, LangChain."
+        }
+    ]
+}
