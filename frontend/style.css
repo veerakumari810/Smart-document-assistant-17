@@ -1,0 +1,146 @@
+/* Premium Background Gradient */
+.stApp {
+    background: linear-gradient(135deg, #1f1147 0%, #2A367A 50%, #0099B8 100%) !important;
+    background-attachment: fixed !important;
+}
+[data-testid="stHeader"] { background: transparent !important; }
+
+/* Glass Sidebar Customization */
+[data-testid="stSidebar"] {
+    background-color: rgba(20, 15, 45, 0.7) !important;
+    backdrop-filter: blur(20px) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.stMainBlockContainer {
+    max-width: 95% !important;
+    padding: 2rem 3rem !important;
+}
+
+/* Enforce clean white typography globally */
+h1, h2, h3, h4, h5, p, span, label, div { color: #1f1c1c; }
+.stMarkdown p, .stMarkdown h1, .stMarkdown h3 { color: white !important; }
+
+/* Left Side Menu Brand Header */
+.brand-box { padding: 10px 5px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+.brand-title { font-size: 19px; font-weight: 700; color: #00FFFF !important; line-height: 1.2; }
+
+/* ==========================================
+   STREAMLIT SIDEBAR BUTTONS COLOR FIXED
+   ========================================== */
+
+/* తెల్లటి బటన్స్ (Secondary Buttons) లోపల టెక్స్ట్ నల్లగా కనిపించడానికి */
+div[data-testid="stSidebar"] button[kind="secondary"] {
+    background-color: #ffffff !important;
+    border: 1px solid #ffffff !important;
+    border-radius: 8px !important;
+    transition: all 0.2s ease-in-out !important;
+}
+
+/* తెల్లటి కార్డ్స్ లోపల టెక్స్ట్ మరియు ఐకాన్స్ ముదురు రంగులో కనిపించేలా */
+div[data-testid="stSidebar"] button[kind="secondary"] p,
+div[data-testid="stSidebar"] button[kind="secondary"] span,
+div[data-testid="stSidebar"] button[kind="secondary"] * {
+    color: #1f1147 !important;
+    font-weight: 700 !important;
+}
+
+/* Hover Effect - మౌస్ తెల్లటి బటన్ పైకి వెళ్ళినప్పుడు */
+div[data-testid="stSidebar"] button[kind="secondary"]:hover {
+    background-color: #f0f0f0 !important;
+    opacity: 0.9;
+}
+
+/* Active Button (సెలెక్ట్ అయిన బ్లూ బటన్) */
+div[data-testid="stSidebar"] button[kind="primary"] {
+    background: linear-gradient(90deg, #4A00E0 0%, #3F51B5 100%) !important;
+    border: 1px solid #00FFFF !important;
+    border-radius: 8px !important;
+}
+div[data-testid="stSidebar"] button[kind="primary"] p,
+div[data-testid="stSidebar"] button[kind="primary"] span,
+div[data-testid="stSidebar"] button[kind="primary"] * {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+/* Upload box glassmorphism styling */
+div[data-testid="stSidebar"] div[data-testid="stFileUploader"] section {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border: 1px dashed rgba(255, 255, 255, 0.2) !important;
+    border-radius: 12px !important;
+    padding: 10px !important;
+}
+div[data-testid="stSidebar"] div[data-testid="stFileUploader"] section div { color: rgb(255, 255, 255) !important; }
+
+/* Glassmorphism Stat Cards Grid */
+.metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 25px; }
+.metric-premium-card {
+    background: rgba(255, 255, 255, 0.07) !important;
+    backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px; padding: 20px; display: flex; align-items: center; gap: 15px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+.m-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; background: rgba(255, 255, 255, 0.15); }
+.m-info .m-label { font-size: 11px; color: rgba(255, 255, 255, 0.6) !important; font-weight: 600; text-transform: uppercase; }
+.m-info .m-count { font-size: 26px; color: #ffffff !important; font-weight: 700; margin: 2px 0; }
+.m-info .m-sub { font-size: 11px; color: #00FFFF !important; font-weight: 500; }
+
+/* Action Grid Navigation Cards */
+.section-title { font-size: 17px; font-weight: 600; color: #00FFFF !important; margin-bottom: 15px; margin-top: 15px; }
+.action-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; margin-bottom: 25px; }
+.action-item-card {
+    background: rgba(255, 255, 255, 0.05) !important; border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px; padding: 20px 15px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.a-icon { font-size: 24px; margin-bottom: 8px; }
+.a-title { font-size: 14px; font-weight: 600; color: white !important; }
+.a-desc { font-size: 11px; color: rgba(255, 255, 255, 0.5) !important; margin-top: 4px; }
+
+/* Glass Windows for Workspace and Tables */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.06) !important; backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 14px; padding: 22px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+}
+
+/* Clean Inputs & Theme Buttons Matching Login */
+.stTextInput input {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    color: white !important; border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 8px !important; padding: 12px !important;
+}
+
+/* Custom Table Style */
+table { width:100%; border-collapse: collapse; }
+th { color: #00FFFF !important; border-bottom: 1px solid rgba(255,255,255,0.2); padding: 10px; font-size: 13px; }
+td { padding: 12px 10px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+
+/* --- LOGIN PAGE CENTER ALIGNMENT & FIX --- */
+.auth-mode .stApp { 
+    background: linear-gradient(135deg, #1f1147 0%, #2A367A 50%, #0099B8 100%) !important; 
+}
+/* లాగిన్ సమయంలో సైడ్‌బార్ అస్సలు రాకుండా హైడ్ చేయడం */
+.auth-mode [data-testid="stSidebar"] { display: none !important; }
+
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 75vh;
+}
+
+div[data-testid="stForm"] {
+    background: rgba(255, 255, 255, 0.1) !important; 
+    backdrop-filter: blur(15px) !important;
+    border-radius: 15px !important; 
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    padding: 30px 35px !important; 
+    width: 450px !important; 
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3) !important;
+}
+.avatar-box { display: flex; justify-content: center; margin-bottom: 20px; }
+.avatar-circle { width: 95px; height: 95px; background: rgba(255, 255, 255, 0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.avatar-circle svg { fill: rgba(255, 255, 255, 0.6); width: 50px; height: 50px; }
