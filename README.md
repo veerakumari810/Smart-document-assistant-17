@@ -190,13 +190,6 @@ streamlit run app.py
 
 ---
 
-## 👩‍💻 Developer
-
-**Achanta Veera Kumari**
-
-Final Year B.Tech (Artificial Intelligence & Data Science)
-
----
 
 ## 📜 License
 
