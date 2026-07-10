@@ -37,7 +37,7 @@ if "chat_messages" not in st.session_state:
 top_col, btn_col = st.columns([6, 4])
 
 with top_col:
-    # హోమ్ పేజీ సెషన్ స్టేట్ చెక్ చేయడం (సమ్మరీ పేజీ లాగే)
+    # హోమ్ పేజీ సెషన్ స్టేట్ చెక్ చేయడం
     if st.session_state.get("pdf_uploaded", False):
         filename = st.session_state.get("filename", "Document")
         pages_count = st.session_state.get("pages_count", "—")
@@ -64,6 +64,8 @@ with btn_col:
                 mime="text/plain",
                 use_container_width=True
             )
+        else:
+            st.button("📥 Download Chat", disabled=True, use_container_width=True)
             
     with b_col2:
         if st.button("🗑️ Clear All", use_container_width=True):
@@ -92,12 +94,17 @@ if user_input := st.chat_input("Ask anything about the document..."):
     with st.chat_message("assistant"):
         with st.spinner("AI is thinking..."):
             try:
-                # మీ బ్యాకెండ్ రూట్‌కి క్వెరీ పంపడం
-                res = requests.post(f"{BACKEND_URL}/api/query", json={"question": user_input}, timeout=60)
+                # 💡 మీ బ్యాకెండ్ లాగ్ ప్రకారం కరెక్ట్ యుఆర్ఎల్ మరియు పేలోడ్ సెట్ చేశాను
+                target_url = f"{BACKEND_URL}/api/query"
+                payload = {"question": user_input}
+                
+                # ⚠️ 'timeout=None' పెట్టడం వల్ల 60 సెకన్ల పరిమితి తొలగిపోయింది!
+                res = requests.post(target_url, json=payload, timeout=None)
+                
                 if res.status_code == 200:
                     ai_response = res.json().get("answer", "No answer found.")
                 else:
-                    ai_response = f"❌ Backend Error: Code {res.status_code}"
+                    ai_response = f"❌ Backend Error: Code {res.status_code}\n\nDetails: {res.text}"
             except Exception as e:
                 ai_response = f"⚠️ Connection Error: {str(e)}"
             
@@ -106,3 +113,4 @@ if user_input := st.chat_input("Ask anything about the document..."):
     # AI రెస్పాన్స్ హిస్టరీలో సేవ్ చేయడం
     st.session_state.chat_messages.append({"role": "assistant", "content": ai_response})
     save_chat_messages(st.session_state.chat_messages)
+    st.rerun()

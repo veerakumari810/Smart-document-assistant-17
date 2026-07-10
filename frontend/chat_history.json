@@ -6,7 +6,31 @@
         },
         {
             "role": "assistant",
-            "content": "Python, FastAPI, Streamlit/React, Qwen, Sentence Transformers, ChromaDB, LangChain."
+            "content": "The technology stack used in this project includes:\n\n- Frontend: Streamlit\n- Backend: FastAPI\n- Document Processing: PyPDF2\n- Chunking: LangChain RecursiveCharacterTextSplitter\n- Embeddings: all-MiniLM-L6-v2\n- Vector DB: FAISS\n- LLM (Language Model): Qwen2.5"
+        },
+        {
+            "role": "user",
+            "content": "what is rag"
+        },
+        {
+            "role": "assistant",
+            "content": "Retrieval-Augmented Generation (RAG) is used in this project to enable the AI-powered Smart Document Assistant for intelligent document question answering. It involves using RAG with Qwen2.5 to provide accurate answers grounded in document content, which addresses the issue of traditional keyword search lacking semantic understanding when searching through large PDF documents."
+        },
+        {
+            "role": "user",
+            "content": "how to cook rice"
+        },
+        {
+            "role": "assistant",
+            "content": "I cannot find the answer in the document."
+        },
+        {
+            "role": "user",
+            "content": "what is name of project title"
+        },
+        {
+            "role": "assistant",
+            "content": "Smart Document Assistant Using RAG with Qwen2.5"
         }
     ]
 }

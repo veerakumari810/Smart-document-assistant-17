@@ -1,3 +1,7 @@
+/* ==========================================================================
+   PART 1: BACKGROUND, SIDEBAR & GLOBAL TYPOGRAPHY
+   ========================================================================== */
+
 /* Premium Background Gradient */
 .stApp {
     background: linear-gradient(135deg, #1f1147 0%, #2A367A 50%, #0099B8 100%) !important;
@@ -68,6 +72,12 @@ div[data-testid="stSidebar"] button[kind="primary"] * {
 div[data-testid="stSidebar"] div[data-testid="stFileUploader"] section {
     background-color: rgba(255, 255, 255, 0.05) !important;
     border: 1px dashed rgba(255, 255, 255, 0.2) !important;
+
+
+/* ==========================================================================
+   PART 2: METRICS, ACTIONS, GLASS PANELS & BLUE THEME BUTTONS
+   ========================================================================== */
+
     border-radius: 12px !important;
     padding: 10px !important;
 }
@@ -104,11 +114,46 @@ div[data-testid="stSidebar"] div[data-testid="stFileUploader"] section div { col
     box-shadow: 0 8px 32px rgba(0,0,0,0.15);
 }
 
-/* Clean Inputs & Theme Buttons Matching Login */
-.stTextInput input {
-    background-color: rgba(255, 255, 255, 0.15) !important;
-    color: white !important; border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    border-radius: 8px !important; padding: 12px !important;
+/* 🔵 [UPDATED] ఇన్‌పుట్ బాక్స్‌లు బ్రైట్ బ్లూ కలర్ మరియు వైట్ టెక్స్ట్ 🔵 */
+.stTextInput input, div[data-testid="stTextInput"] input {
+    background-color: #243b82 !important; /* అందమైన బ్రైట్ బ్లూ కలర్ */
+    color: #ffffff !important; /* టైప్ చేసే అక్షరాలు తెల్లగా ఉంటాయి */
+    border: 1px solid #3b59b6 !important;
+    border-radius: 8px !important; 
+    padding: 12px !important;
+    font-weight: 500 !important;
+}
+
+/* పాస్‌వర్డ్ కన్ను గుర్తు ఐకాన్ కలర్ */
+div[data-testid="stTextInput"] button {
+    color: #ffffff !important;
+}
+
+/* ప్లేస్‌హోల్డర్ కలర్ */
+div[data-testid="stTextInput"] input::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important; 
+    opacity: 1 !important;
+}
+
+/* 🚀 [NEW] LOGIN బటన్ మరియు REGISTER బటన్‌లను బ్లూ గ్రేడియంట్ లోకి మార్చడం 🚀 */
+div[data-testid="stForm"] button, 
+.stButton button, 
+button[data-testid="baseButton-secondary"] {
+    background: linear-gradient(90deg, #1e40af 0%, #3b82f6 100%) !important; /* బ్లూ గ్రేడియంట్ */
+    color: #ffffff !important; /* బటన్ లోపల టెక్స్ట్ వైట్ */
+    border: 1px solid #60a5fa !important;
+    border-radius: 8px !important;
+    font-weight: bold !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4) !important;
+}
+
+/* బటన్స్ పైకి మౌస్ తీసుకెళ్లినప్పుడు Hover Effect */
+div[data-testid="stForm"] button:hover, 
+.stButton button:hover {
+    background: linear-gradient(90deg, #1d4ed8 0%, #2563eb 100%) !important;
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6) !important;
+    transform: translateY(-1px);
 }
 
 /* Custom Table Style */
@@ -120,9 +165,7 @@ td { padding: 12px 10px; border-bottom: 1px solid rgba(255,255,255,0.05); }
 .auth-mode .stApp { 
     background: linear-gradient(135deg, #1f1147 0%, #2A367A 50%, #0099B8 100%) !important; 
 }
-/* లాగిన్ సమయంలో సైడ్‌బార్ అస్సలు రాకుండా హైడ్ చేయడం */
 .auth-mode [data-testid="stSidebar"] { display: none !important; }
-
 
 .auth-container {
     display: flex;
